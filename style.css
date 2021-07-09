@@ -1,0 +1,108 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  font-family: cursive;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  justify-content: space-between;
+  /* margin-top: 10px; */
+}
+header > p {
+  cursor: pointer;
+  font-size: 20px;
+  color: #4eb46a;
+}
+nav ul li {
+  list-style-type: none;
+  display: inline-block;
+  margin-left: 15px;
+  font-size: 20px;
+}
+nav ul li a {
+  list-style-type: none;
+  text-decoration: none;
+  cursor: pointer;
+  color: #4eb46a;
+}
+.btn-color {
+  padding: 10px;
+  cursor: pointer;
+  background: #4eb46a;
+  color: #ffffff;
+  border-color: #ffffff;
+  border-radius: 8px;
+}
+.searchBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.searchBox {
+  margin: 30px 0;
+}
+.searchBox > input {
+  width: 400px;
+  padding: 23px;
+  border: none;
+  background-color: #dcdcdc;
+  border-radius: 5px;
+}
+input.search:focus {
+  outline-width: 0;
+  font-size: 16px;
+}
+.label {
+  margin-left: 10px;
+  font-size: 22px;
+}
+.search-btn {
+  position: relative;
+  font-size: 18px;
+  width: 100px;
+  padding: 20px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}
+.gridDiv {
+  width: 350px;
+}
+
+.foodImage {
+  width: 200px;
+  /* background-size: cover; */
+  /* align-items: center;
+  text-align: center; */
+}
+.foodTitle {
+  font-size: 30px;
+  text-align: center;
+  letter-spacing: 1px;
+  margin: 10px 0;
+}
+.foodDescription {
+  font-size: 16px;
+  letter-spacing: 1px;
+}
+/* .catagory {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+} */
+
+/* .gridDiv {
+  display: flex;
+  flex-direction: columns; */
+/* flex-direction: column; */
+/* align-items: center;
+  justify-content: center; */
+/* } */
