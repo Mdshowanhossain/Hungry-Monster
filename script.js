@@ -4,35 +4,46 @@ const loadMeal = () => {
     fetch('https://www.themealdb.com/api/json/v1/1/categories.php')
         .then(response => response.json())
         .then(data => {
-            const foods = (data.categories);
-            foods.map(food => showMeals(food));
+            const foodData = data.categories
+            showMeals(foodData)
         })
+
+
 }
+
 loadMeal();
 
-const showMeals = (food) => {
+const showMeals = (foodData) => {
+    // console.log(foodData)
     const catagoriesId = document.getElementById("catagories");
 
-    const foodImage = document.createElement("IMG");
-    foodImage.className = "foodImage";
-    foodImage.src = food.strCategoryThumb;
-    catagoriesId.appendChild(foodImage)
+    foodData.forEach(food => {
 
-    const foodTitle = document.createElement("h2");
-    foodTitle.className = "foodTitle";
-    foodTitle.innerText = food.strCategory;
-    catagoriesId.appendChild(foodTitle);
+        const foodsDiv = document.createElement("div");
+        foodsDiv.className = "foods"
 
-    const foodDescription = document.createElement("p");
-    foodDescription.className = "foodDescription";
-    foodDescription.innerText = food.strCategoryDescription;
-    catagoriesId.appendChild(foodDescription)
+
+        const elementCrate = `
+                <img class="foodImg" src=${food.strCategoryThumb} alt="" />
+                <h2 class="foodTitle">${food.strCategory}</h2>
+                
+            `
+        foodsDiv.innerHTML = elementCrate;
+        catagoriesId.appendChild(foodsDiv)
+    })
+
 
 }
+
+
+
+
+
 
 
 searchBtn.addEventListener("click", () => { })
 
+// <small>${food.strCategoryDescription}</small>
 
 
 
@@ -41,65 +52,17 @@ searchBtn.addEventListener("click", () => { })
 
 
 
+    // const foodImage = document.createElement("IMG");
+    // foodImage.className = "foodImage";
+    // foodImage.src = food.strCategoryThumb;
+    // catagoriesId.appendChild(foodImage)
 
+    // const foodTitle = document.createElement("h2");
+    // foodTitle.className = "foodTitle";
+    // foodTitle.innerText = food.strCategory;
+    // catagoriesId.appendChild(foodTitle);
 
-
-// const searchBtn = document.getElementById("searchBtn");
-
-// const loadMeal = () => {
-//     fetch('https://www.themealdb.com/api/json/v1/1/categories.php')
-//         .then(response => response.json())
-//         .then(data => showMeals(data))
-// }
-// loadMeal()
-
-// // <img src=${food.strCategoryThumb} alt="" />
-
-// const showMeals = (data) => {
-
-//     const catagoriesId = document.getElementById("catagories");
-
-//     console.log(data)
-//     const foods = data.categories;
-//     foods.map(food => {
-
-//         const foodsElements = `
-//         <p>${food.strCategory}</p>
-//         `
-//         catagoriesId.append(foodsElements)
-//     });
-
-// const foodName = document.createElement("h2");
-// foodName.innerText = food.strCategory;
-// catagoriesId.appendChild(foodName);
-
-// const foodDescription = document.createElement("p");
-// foodDescription.innerText = food.strCategoryDescription;
-// catagoriesId.appendChild(foodDescription)
-
-// const foodImage = document.createElement("img");
-
-// const foodImage = `
-//         <img src="" alt="" />
-// `
-
-// catagoriesId.appendChild(foodImage)
-
-// }
-
-// searchBtn.addEventListener("click", () => { })
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    // const foodDescription = document.createElement("p");
+    // foodDescription.className = "foodDescription";
+    // foodDescription.innerText = food.strCategoryDescription;
+    // catagoriesId.appendChild(foodDescription)

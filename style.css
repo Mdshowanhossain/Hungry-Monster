@@ -74,35 +74,21 @@ input.search:focus {
   border: none;
   cursor: pointer;
 }
-.gridDiv {
-  width: 350px;
-}
-
-.foodImage {
-  width: 200px;
-  /* background-size: cover; */
-  /* align-items: center;
-  text-align: center; */
-}
-.foodTitle {
-  font-size: 30px;
-  text-align: center;
-  letter-spacing: 1px;
-  margin: 10px 0;
-}
-.foodDescription {
-  font-size: 16px;
-  letter-spacing: 1px;
-}
-/* .catagory {
+#catagories {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-} */
-
-/* .gridDiv {
-  display: flex;
-  flex-direction: columns; */
-/* flex-direction: column; */
-/* align-items: center;
-  justify-content: center; */
-/* } */
+  grid-gap: 200px;
+  margin-top: 150px;
+}
+.foods {
+  align-items: center;
+}
+.foodTitle {
+  text-align: center;
+  cursor: pointer;
+}
+.foodImg {
+  width: 100%;
+  object-fit: cover;
+  cursor: pointer;
+}
