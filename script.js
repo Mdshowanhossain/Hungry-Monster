@@ -7,8 +7,6 @@ const loadMeal = () => {
             const foodData = data.categories
             showMeals(foodData)
         })
-
-
 }
 
 loadMeal();
@@ -22,20 +20,59 @@ const showMeals = (foodData) => {
         const foodsDiv = document.createElement("div");
         foodsDiv.className = "foods"
 
-
         const elementCrate = `
-                <img class="foodImg" src=${food.strCategoryThumb} alt="" />
+                <img onclick="getDetailsFoods('${food.strCategory}')" class="foodImg" src=${food.strCategoryThumb} alt="" />
                 <h2 class="foodTitle">${food.strCategory}</h2>
-                
             `
         foodsDiv.innerHTML = elementCrate;
         catagoriesId.appendChild(foodsDiv)
     })
-
-
 }
 
+const getDetailsFoods = (Arrabiata) => {
 
+    // const url = `https://www.themealdb.com/api/json/v1/1/categories.php/${food}`
+    const detailParent = document.getElementById("detail");
+
+    const url = `https://www.themealdb.com/api/json/v1/1/search.php?s=${Arrabiata}`
+    // console.log(url)
+
+    fetch(url)
+        .then(response => response.json())
+        .then(responseData => {
+            displayDetailsFood(responseData.meals[0])
+            // displayDetailsFood((responseData.meals))
+
+        })
+}
+
+const displayDetailsFood = (food) => {
+    console.log(food)
+
+    const detailPage = document.getElementById('catagories');
+
+    // const createItemDiv = document.createElement('div');
+
+    detailPage.innerHTML = `
+
+        <div class="foodDetails">
+                <img class="detailImage" src="${food.strMealThumb}" alt=""/>
+                <h1 class="detailTitle">${food.strMeal}</h1>
+                <h2 class="incredient">Ingredient</h2>
+                <p><i class="fas fa-check-square"></i>${food.strIngredient1}</p>
+                <p><i class="fas fa-check-square"></i>${food.strIngredient2}</p>
+                <p><i class="fas fa-check-square"></i>${food.strIngredient3}</p>
+                <p><i class="fas fa-check-square"></i>${food.strIngredient4}</p>
+                <p><i class="fas fa-check-square"></i>${food.strIngredient5}</p>
+                <p><i class="fas fa-check-square"></i>${food.strIngredient6}</p>
+                <p><i class="fas fa-check-square"></i>${food.strIngredient7}</p>
+                <p><i class="fas fa-check-square"></i>${food.strIngredient8}</p>
+                <p><i class="fas fa-check-square"></i>${food.strIngredient9}</p>
+                <p><i class="fas fa-check-square"></i>${food.strIngredient10}</p>
+            
+        </div>
+    `
+}
 
 
 
@@ -43,26 +80,4 @@ const showMeals = (foodData) => {
 
 searchBtn.addEventListener("click", () => { })
 
-// <small>${food.strCategoryDescription}</small>
 
-
-
-
-
-
-
-
-    // const foodImage = document.createElement("IMG");
-    // foodImage.className = "foodImage";
-    // foodImage.src = food.strCategoryThumb;
-    // catagoriesId.appendChild(foodImage)
-
-    // const foodTitle = document.createElement("h2");
-    // foodTitle.className = "foodTitle";
-    // foodTitle.innerText = food.strCategory;
-    // catagoriesId.appendChild(foodTitle);
-
-    // const foodDescription = document.createElement("p");
-    // foodDescription.className = "foodDescription";
-    // foodDescription.innerText = food.strCategoryDescription;
-    // catagoriesId.appendChild(foodDescription)
