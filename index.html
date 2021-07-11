@@ -12,43 +12,27 @@
 </head>
 
 <body>
-
     <header>
-        <p>NavBar</p>
+        <p>Hungry Monster</p>
         <nav>
             <ul class="nav-links">
                 <li><a href="">Home</a></li>
-                <li><a href="">Home</a></li>
-                <li><a href="">Home</a></li>
-                <li><a href="">Home</a></li>
-                <li><a href="">Home</a></li>
+                <li><a href="">About</a></li>
+                <li><a href="">Contact</a></li>
+                <li><a href="">Catagories</a></li>
             </ul>
         </nav>
-        <!-- <a href=""><button class="btn-color">What's New</button></a> -->
     </header>
-
     <section>
         <div class="searchBox">
-            <input class="search" type="text">
-            <!-- <label class="label" for="">search</label> -->
-            <button class="search-btn" id="searchBtn">Search</button>
+            <input id="searchInput" name='search' placeholder="Search" type="text" />
+
+            <button onclick="searchBtn()" class="search-btn">Search</button>
         </div>
-    </section>
-
-
-    <section>
-
-    </section>
-
-    <main>
-        <div id="catagories"> </div>
-        <div id="detail"></div>
-
-
-    </main>
-
-    <script src="./script.js""></script>
-
+        <main>
+            <div id="catagories"> </div>
+        </main>
+        <script src="./script.js""></script>
 </body>
 
 </html>
